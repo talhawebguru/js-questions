@@ -1,0 +1,26 @@
+<!-- Q2 Create a Html page with image and button. when we click on button swap the src attribute of the images -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <img class="first" src="https://www.uidesign.tips/static/images/hero.jpg" alt=""><img class="second" src="https://www.uidesign.tips/static/logo.svg" alt="">
+    <button id="main">Click Me</button>
+
+
+
+    <script>
+        var btn = document.getElementById('main');
+        var img1 = document.querySelector('.first');
+        var img2 = document.querySelector('.second');
+     btn.addEventListener("click", ()=>{
+        var temp1 = img1.src;
+        img1.src = img2.src;
+        img2.src = temp1;
+     })
+    </script>
+ </body>
+ </html>

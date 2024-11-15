@@ -1,0 +1,35 @@
+<!-- Create a tabbed interface where clicking on tabs display the different content selection without page reloading -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="about">About me</button>
+    <button id="contact">contact me</button>
+    <button id="profile">profile</button>
+
+    <h2></h2>
+
+
+    <script>
+        var about = document.querySelector('#about');
+        var contact = document.querySelector('#contact');
+        var profile = document.querySelector('#profile');
+        var h2 = document.querySelector('h2');
+
+        about.addEventListener('click', ()=>{
+            h2.textContent = "About me";
+        }); 
+        contact.addEventListener('click', ()=>{
+            h2.textContent = "Contact me";
+        });
+        profile.addEventListener('click', ()=>{
+            h2.textContent = "Profile";
+        });
+    </script>
+</body>
+</html>

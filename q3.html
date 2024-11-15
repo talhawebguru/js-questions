@@ -1,0 +1,58 @@
+<!-- Crete a form with input fields and a submit button. Use Js to validate the form and display the error message if the input is invalid  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <h3 id="Error"></h3>
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <br>
+        <br>
+        <button>Submit</button>
+    </form>
+
+
+    <script>
+        const input1 = document.querySelector('#name');
+        const input2 = document.querySelector('#password');
+        const btn1 = document.querySelector('button');
+        const form1 = document.querySelector('#myForm');
+        const error = document.querySelector('#Error');
+
+        form1.addEventListener("submit",(e)=>{
+            e.preventDefault();
+
+        })
+
+        btn1.addEventListener("click",(e)=>{
+            if(input1.value.length < 5){
+                // alert("Name must be atleast 5 characters long");
+                e.preventDefault;
+                error.textContent = "Name must be atleast 5 characters long";
+            }
+            else if(input2.value.length < 8){
+                // alert("Password must be atleast 8 characters long");
+                e.preventDefault;
+                error.textContent = "Password must be atleast 8 characters long";
+            }
+            else{
+                alert("Form submitted successfully");
+                input1.value = "";
+                input2.value = "";
+                error.textContent = "";
+            }
+        })
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!-- Q1 Create a Html page with a button and a paragraph. when we click on button change the paragraph content -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="main">Click me</button>
+    <p>This is a para grapgh</p>
+
+
+    <script>
+         var btn = document.getElementById('main');
+         var para = document.querySelector('p');
+         btn.addEventListener("click", ()=>{para.textContent = "Hello World";});
+    </script>
+</body>
+</html>

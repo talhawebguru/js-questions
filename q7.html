@@ -1,0 +1,70 @@
+<!-- Display a progress bar that update in real time, showing a progress of a task download or form submission  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #main {
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #downloading {
+            margin-top: 20PX;
+            width: 300px;
+            border-radius: 100px;
+            height: 20px;
+            background-color: gray;
+        }
+
+        #downloading div {
+            width: 0%;
+            height: 100%;
+            background-color: #4CAF50;
+            transition: width 2s;
+            border-radius: 100px;
+        }
+
+        h1 {
+            opacity: 0;
+            transition: opacity 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <h1>Download Complete</h1>
+        <div id="downloading">
+            <div></div>
+        </div>
+    </div>
+
+
+    <script>
+        var downloading = document.querySelector("#downloading div");
+        var h1 = document.querySelector("h1");
+        var width = 0;
+        var interval = setInterval(() => {
+
+            width += 10;
+            downloading.style.width = width + "%";
+            if (width === 100) {
+                clearInterval(interval);
+                h1.style.opacity = 1;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
